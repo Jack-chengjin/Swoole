@@ -6,3 +6,4 @@
  * Time: 7:50
  */
 echo time();
+echo 22;
