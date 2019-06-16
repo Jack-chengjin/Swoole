@@ -9,6 +9,10 @@
 //创建Server对象，监听 127.0.0.1:9501端口
 $serv = new swoole_server("127.0.0.1", 9501);
 
+$serv->set(array(
+    'worker_num' => 8,    //worker process num
+    'max_request' => 50,
+));
 //监听连接进入事件
 $serv->on('connect', function ($serv, $fd) {
     echo "Client: Connect.\n";
@@ -25,4 +29,4 @@ $serv->on('close', function ($serv, $fd) {
 });
 
 //启动服务器
-$serv->start(); 
+$serv->start();
