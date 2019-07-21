@@ -7,6 +7,13 @@
  */
 $server = new Swoole\WebSocket\Server("0.0.0.0", 8812);
 
+$server -> set(
+    [
+        'enable_static_handler' => true,
+        'document_root' => "/home/work/github/git-swoole/Swoole/Swoole/data"
+    ]
+);
+
 $server->on('open', function (Swoole\WebSocket\Server $server, $request) {
     echo "server: handshake success with fd{$request->fd}\n";
 });
