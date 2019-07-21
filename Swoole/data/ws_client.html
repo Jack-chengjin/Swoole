@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>ws_lichengjin_socket_测试</h1>
+<script>
+    var wsUrl = "ws://www.swoole.com:8812";
+    var websocket = new WebSocket(wsUrl);
+
+    //实例对象的onopen属性
+    websocket.onopen = function(evt){
+        console.log("connect_swoole_success");
+    }
+
+    //实例化onmessage
+    websocket.onmessage = function(evt){
+        console.log("ws_server_return_data:"+evt.data);
+    }
+
+    //onclose
+    websocket.onclose = function(evt){
+        console.log("close");
+    }
+
+    //onerror
+    websocket.onerror = function(evt,e){
+        console.log("error:"+ evt.data);
+    }
+</script>
+</body>
+</html>
