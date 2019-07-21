@@ -12,6 +12,7 @@
 
     //实例对象的onopen属性
     websocket.onopen = function(evt){
+        websocket.send("hello socket");
         console.log("connect_swoole_success");
     }
 
