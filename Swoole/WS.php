@@ -17,6 +17,7 @@ class WS{
         $this->WS->on('open',[$this,'onOpen']);
         $this->WS->on('message',[$this,'onMessage']);
         $this->WS->on('close',[$this,'onClose']);
+        $this->WS->start();
     }
 
     public function onOpen($server,$request){
